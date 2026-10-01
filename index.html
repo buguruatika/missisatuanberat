@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pusat Kontrol & Game UI Dashboard - Warak Antariksa</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      user-select: none;
+      background-color: #020617;
+      background-image: linear-gradient(rgba(2, 6, 23, 0.7), rgba(15, 23, 42, 0.85)), url('https://i.imgur.com/Xd0njCu.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+    .heading-font { font-family: 'Orbitron', sans-serif; }
+    .space-glass {
+      background: rgba(30, 41, 59, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    @keyframes floatWarak {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .animate-float { animation: floatWarak 4s ease-in-out infinite; }
+  </style>
+</head>
+<body class="h-full flex flex-col text-slate-100 overflow-x-hidden">
+
+  <!-- Header Dashboard -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md shrink-0 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-xl shadow-lg shadow-cyan-500/20">
+          🛰️
+        </div>
+        <div>
+          <h1 class="heading-font text-sm md:text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-amber-300">
+            DASHBOARD KONTROL WARAK UI
+          </h1>
+          <p class="text-[10px] text-slate-400">Pusat Monitor & Pengaturan Animasi Interaktif</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold rounded-full animate-pulse">
+          ● Sistem Online
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama UI Dashboard -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+    
+    <!-- Kolom 1: Profil Maskot & Status AI -->
+    <div class="space-glass p-5 rounded-3xl space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
+      <img src="https://i.imgur.com/qTQOPGx.png" alt="Robot Warak" class="w-36 h-36 object-contain animate-float drop-shadow-[0_0_25px_rgba(56,189,248,0.8)]" />
+      <div class="space-y-1 w-full text-center lg:text-left">
+        <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-bold border border-cyan-400/30 uppercase">
+          AI Assistant v3.5
+        </span>
+        <h2 class="heading-font text-lg font-black text-white pt-1">Robot Warak AI</h2>
+        <p class="text-xs text-slate-300 leading-relaxed pt-1">
+          Siap mendampingi murid belajar konversi satuan berat di SDN Karanganyar Gunung 02 Semarang.
+        </p>
+      </div>
+      
+      <div class="w-full pt-2 border-t border-slate-700/80 space-y-2">
+        <div class="flex justify-between text-xs text-slate-300">
+          <span>Koneksi AI Gemini:</span> <strong class="text-emerald-400">Terhubung</strong>
+        </div>
+        <div class="flex justify-between text-xs text-slate-300">
+          <span>Fitur Suara (TTS):</span> <strong class="text-sky-300">Aktif</strong>
+        </div>
+        <div class="flex justify-between text-xs text-slate-300">
+          <span>Tingkat Kesulitan:</span> <strong class="text-amber-300">Fase B & C SD</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kolom 2 & 3: Panel Kontrol Modul Game UI -->
+    <div class="lg:col-span-2 space-y-5">
+      
+      <!-- Kartu Aksi Cepat -->
+      <div class="space-glass p-5 rounded-3xl border border-cyan-500/40 space-y-4">
+        <h3 class="heading-font text-sm md:text-base font-bold text-cyan-300 flex items-center gap-2">
+          <span>🕹️</span> Panel Interaksi Menu Utama Game
+        </h3>
+        <p class="text-xs text-slate-300">
+          Gunakan tombol di bawah untuk menguji komponen UI atau langsung meluncur ke platform permainan utama.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <button onclick="triggerAction('bukaGame')" class="p-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 cursor-pointer">
+            <span>🚀 Buka Game Utama</span>
+          </button>
+          <button onclick="triggerAction('tesSuara')" class="p-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer">
+            <span>🔊 Tes Suara Robot Warak</span>
+          </button>
+          <button onclick="triggerAction('infoKurikulum')" class="p-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer">
+            <span>🎯 Lihat Capaian Kurikulum</span>
+          </button>
+          <button onclick="triggerAction('resetStat')" class="p-3.5 rounded-2xl bg-rose-950/80 hover:bg-rose-900 border border-rose-500/50 text-rose-200 font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer">
+            <span>⚙️ Reset Cache UI</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Terminal Log / Output Interaksi -->
+      <div class="space-glass p-5 rounded-3xl border border-slate-700 space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="heading-font text-xs font-bold text-slate-300 flex items-center gap-1.5">
+            <span>💻</span> Terminal Log Aktivitas UI
+          </h3>
+          <span id="log-status" class="text-[10px] text-slate-400">Menunggu aksi...</span>
+        </div>
+        <div id="terminal-box" class="w-full h-32 bg-slate-950 border border-slate-800 rounded-2xl p-3 font-mono text-[11px] text-emerald-400 overflow-y-auto space-y-1">
+          <div>[SYSTEM] UI Dashboard berhasil dimuat dengan framework Tailwind CSS.</div>
+          <div>[WARAK] Halo Bu Atika! Sistem antarmuka siap digunakan.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-3 text-center text-xs text-slate-500 bg-slate-950/90 shrink-0">
+    Pengembang Game : Atika Rizkiyanti Nurfaidah, S.Pd. • SDN Karanganyar Gunung 02 Semarang
+  </footer>
+
+  <script>
+    function logToTerminal(msg) {
+      const box = document.getElementById('terminal-box');
+      const time = new Date().toLocaleTimeString();
+      box.innerHTML += `<div>[${time}] ${msg}</div>`;
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function triggerAction(action) {
+      if (action === 'bukaGame') {
+        logToTerminal("Membuka tautan game utama antariksa...");
+        alert("Silakan arahkan jendela browser ke file utama game HTML Anda untuk memulai permainan.");
+      } else if (action === 'tesSuara') {
+        logToTerminal("Mengaktifkan Text-to-Speech Robot Warak...");
+        if (window.speechSynthesis) {
+          const u = new SpeechSynthesisUtterance("Halo! Saya Robot Warak, siap membantu anak-anak belajar satuan berat dengan gembira!");
+          u.lang = 'id-ID';
+          window.speechSynthesis.speak(u);
+        } else {
+          alert("Browser Anda tidak mendukung sintesis suara.");
+        }
+      } else if (action === 'infoKurikulum') {
+        logToTerminal("Menampilkan informasi Capaian Pembelajaran Fase B & C.");
+        alert("Capaian Pembelajaran: Peserta didik mampu mengukur, mengestimasi, dan mengonversi satuan baku berat (ton, kuintal, kg, ons, gram) dengan terampil.");
+      } else if (action === 'resetStat') {
+        logToTerminal("Cache UI berhasil dibersihkan.");
+        alert("Cache antarmuka berhasil disetel ulang.");
+      }
+    }
+  </script>
+
+</body>
+</html>
